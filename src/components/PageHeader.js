@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: "#fff",
+    backgroundColor: "#D4D2D5",
   },
   pageHeader: {
     padding: theme.spacing(4),
@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
     color: "#3c44b1",
   },
   pageTitle: {
-      paddingLeft: theme.spacing(4),
-      '& .MuiTypography-subtitle2': {
-          opacity: "0.6"
-      }
+    paddingLeft: theme.spacing(4),
+    "& .MuiTypography-subtitle2": {
+      opacity: "0.6",
+    },
   },
 }));
 
@@ -28,7 +28,7 @@ const PageHeader = ({ title, subtitle, icon }) => {
   return (
     <Paper elevation={0} square className={classes.root}>
       <div className={classes.pageHeader}>
-              <Card className={classes.pageIcon} >{icon}</Card>
+        <Card className={classes.pageIcon}>{icon}</Card>
         <div className={classes.pageTitle}>
           <Typography variant="h6" component="div">
             {title}

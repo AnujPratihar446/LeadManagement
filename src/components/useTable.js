@@ -23,8 +23,8 @@ const useStyles = makeStyles((theme) => ({
     "& tbody td": {
       fontWeight: "300",
     },
-    "& tbody:hover": {
-      backgroundColor: "#fffbf2",
+    "& tbody tr:hover": {
+      backgroundColor: "#C6D0FA",
       cursor: "pointer",
       fontWeight: "600",
       color: theme.palette.primary.main,

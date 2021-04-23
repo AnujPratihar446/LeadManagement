@@ -49,7 +49,7 @@ const Popup = ({ title, children, openPopup, setOpenPopup }) => {
             {title}
           </Typography>
           <Controls.ActionButton
-            color="secondary"
+            color="primary"
             onClick={() => {
               resetForm();
               setOpenPopup(false);

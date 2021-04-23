@@ -13,17 +13,18 @@ import SearchIcon from "@material-ui/icons/Search";
 
 const useStyles = makeStyles({
   root: {
-    backgroundColor: "#fff",
-    transform: "translateZ(0)"
+    backgroundColor: "#353238",
+    transform: "translateZ(0)",
   },
   searchInput: {
     opacity: "0.6",
     padding: "0px 8px",
     fontSize: "0.8rem",
-      '&:hover': { backgroundColor: '#f2f2f2' },
-      '& .MuiSvgIcon-root': {
-        marginRight: '8px' 
-    }
+    backgroundColor: "#F6F3DF",
+    "&:hover": { backgroundColor: "#FBF9EF" },
+    "& .MuiSvgIcon-root": {
+      marginRight: "10px",
+    },
   },
 });
 
@@ -36,29 +37,30 @@ const Header = () => {
         <Grid container alignItems="center">
           {/* SEARCH BAR */}
           <Grid item>
-            <InputBase
+            {/* <InputBase
               placeholder="Search Topics"
               className={classes.searchInput}
               startAdornment={<SearchIcon fontSize="small" />}
-            />
+            /> */}
+            <h1 style={{ color: "gold" }}>YESSLY CONSULTANCY</h1>
           </Grid>
           {/* EMPTY SPACE */}
           <Grid item sm></Grid>
           {/* RIGHT SIDE ICONS */}
           <Grid item>
-            <IconButton>
+            {/* <IconButton>
               <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon fontSize="small" />
+                <NotificationsIcon fontSize="medium" />
               </Badge>
             </IconButton>
             <IconButton>
-              <Badge badgeContent={4} color="primary">
-                <ChatBubbleIcon fontSize="small" />
+              <Badge badgeContent={4} color="secondary">
+                <ChatBubbleIcon fontSize="medium" />
               </Badge>
             </IconButton>
             <IconButton>
               <ChatBubbleIcon />
-            </IconButton>
+            </IconButton> */}
           </Grid>
         </Grid>
       </Toolbar>

@@ -8,6 +8,8 @@ import { Search } from "@material-ui/icons";
 import EditOutlinedIcon from "@material-ui/icons/EditOutlined";
 import CloseIcon from "@material-ui/icons/Close";
 import AddIcon from "@material-ui/icons/Add";
+import PublishIcon from "@material-ui/icons/Publish";
+import GetAppIcon from "@material-ui/icons/GetApp";
 import {
   InputAdornment,
   makeStyles,
@@ -27,13 +29,23 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(5),
     padding: theme.spacing(3),
   },
-  newButton: {
-    position: "absolute",
-    right: "120px",
-    top: "270px",
+  toolbar: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   searchInput: {
-    width: "75%",
+    width: "50%",
+  },
+  addButton: {
+    color: "gold",
+    backgroundColor: "#0471A6",
+  },
+  importButton: {
+    color: "black",
+  },
+  exportButton: {
+    color: "black",
   },
 }));
 
@@ -122,14 +134,19 @@ const Employees = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        background: "linear-gradient(179.29deg, #BCC5CE 0.61%, #929EAD 99.4%)",
+        height: "100vh",
+      }}
+    >
       <PageHeader
-        title="Leads Data Table"
+        title="Leads Database"
         subtitle="Click on the 'New Entry' button to add entries "
-        icon={<PeopleIcon fontSize="large" />}
+        icon={<PeopleIcon fontSize="large" color="primary" />}
       />
       <Paper className={classes.pageContent}>
-        <Toolbar>
+        <Toolbar className={classes.toolbar}>
           <Controls.Input
             className={classes.searchInput}
             label="Search Entries"
@@ -142,17 +159,29 @@ const Employees = () => {
             }}
             onChange={handleSearch}
           />
+          <Controls.Button
+            text="New Entry"
+            variant="contained"
+            startIcon={<AddIcon />}
+            className={classes.addButton}
+            onClick={() => {
+              setOpenPopup(true);
+              setRowEdit(null);
+            }}
+          />
+          <Controls.Button
+            text="Import Excel File"
+            variant="outlined"
+            startIcon={<GetAppIcon style={{ color: "green" }} />}
+            className={classes.importButton}
+          />
+          <Controls.Button
+            text="Export Excel File"
+            variant="outlined"
+            startIcon={<PublishIcon style={{ color: "blue" }} />}
+            className={classes.exportButton}
+          />
         </Toolbar>
-        <Controls.Button
-          text="New Entry"
-          variant="outlined"
-          startIcon={<AddIcon />}
-          className={classes.newButton}
-          onClick={() => {
-            setOpenPopup(true);
-            setRowEdit(null);
-          }}
-        />
         <TblContainer>
           <TblHead />
           <TableBody>
@@ -204,7 +233,7 @@ const Employees = () => {
           updateRow={updateRow}
         />
       </Popup>
-    </>
+    </div>
   );
 };
 

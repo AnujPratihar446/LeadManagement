@@ -100,14 +100,16 @@ const EmployeeForm = ({ onAdd, popup, rowEdit, updateRow, addOrEdit }) => {
             onChange={handleInputChange}
             options={getStatus}
           />
-          <Controls.Checkbox
+          {/* CHECKBOX */}
+          {/* <Controls.Checkbox
             name="isClosed"
             label="Closed"
             value={values.isClosed}
             onChange={handleInputChange}
-          />
+          /> */}
         </Grid>
         <Grid item xs={6}>
+          {/* RADIOGROUP */}
           {/* <Controls.RadioGroup
             name="gender"
             value={values.gender}
@@ -151,6 +153,7 @@ const EmployeeForm = ({ onAdd, popup, rowEdit, updateRow, addOrEdit }) => {
             value={values.remarks}
             onChange={handleInputChange}
           />
+          {/* BUTTONS */}
           <div>
             <Controls.Button type="submit" text="Submit" />
             <Controls.Button text="Reset" color="default" />
